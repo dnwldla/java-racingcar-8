@@ -19,4 +19,8 @@ public class Car {
         }
     }
 
+    public String getState() {
+        return this.name + " : " + "-".repeat(this.count);
+    }
+
 }
