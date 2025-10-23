@@ -1,20 +1,23 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.generator.NumberGenerator;
 
 public class Car {
 
     private final String name;
+    private final NumberGenerator numberGenerator;
     private int count;
 
-    public Car(String name) {
+
+    public Car(String name, NumberGenerator numberGenerator) {
         this.name = name;
+        this.numberGenerator = numberGenerator;
     }
 
     public void move() {
-        int randomNum = Randoms.pickNumberInRange(1, 9);
+        int number = numberGenerator.getNumber();
 
-        if (randomNum >= 4) {
+        if (number >= 4) {
             this.count++;
         }
     }

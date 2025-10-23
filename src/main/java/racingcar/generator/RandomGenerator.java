@@ -1,0 +1,11 @@
+package racingcar.generator;
+
+import camp.nextstep.edu.missionutils.Randoms;
+
+public class RandomGenerator implements NumberGenerator {
+
+    @Override
+    public int getNumber() {
+        return Randoms.pickNumberInRange(1, 9);
+    }
+}

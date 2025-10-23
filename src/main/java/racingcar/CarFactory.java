@@ -2,6 +2,7 @@ package racingcar;
 
 import java.util.ArrayList;
 import java.util.List;
+import racingcar.generator.RandomGenerator;
 
 public class CarFactory {
 
@@ -17,7 +18,7 @@ public class CarFactory {
         String[] names = validateInput(input);
 
         for (String name : names) {
-            cars.add(new Car(name));
+            cars.add(new Car(name,new RandomGenerator()));
         }
 
         return cars;
