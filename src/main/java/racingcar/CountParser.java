@@ -14,7 +14,7 @@ public class CountParser {
         try {
             count = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalStateException("숫자를 입력해야 합니다");
+            throw new IllegalArgumentException("숫자를 입력해야 합니다");
         }
 
         return count;

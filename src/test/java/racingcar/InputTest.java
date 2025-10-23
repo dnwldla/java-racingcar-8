@@ -1,0 +1,47 @@
+package racingcar;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+import org.junit.jupiter.api.Test;
+
+public class InputTest {
+
+    @Test
+    void inputWithInvalidInput() {
+        CarFactory carFactory = new CarFactory("aaaaaa,bb,c");
+
+        assertThatThrownBy(() -> carFactory.getCars())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("자동차 이름은 최대 다섯글자입니다");
+    }
+
+    @Test
+    void inputWithValidCars() {
+        CarFactory carFactory = new CarFactory("aaaaa,bb,c");
+
+        assertThat(carFactory.getCars().size()).isEqualTo(3);
+    }
+
+
+    @Test
+    void inputWithInvalidNumber() {
+        CountParser parser = new CountParser("!");
+
+        assertThatThrownBy(() -> parser.getCount())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("숫자를 입력해야 합니다");
+
+
+    }
+
+
+    @Test
+    void inputWithValidNumber() {
+        CountParser parser = new CountParser("1");
+
+        assertThat(parser.getCount()).isEqualTo(1);
+    }
+
+
+}
