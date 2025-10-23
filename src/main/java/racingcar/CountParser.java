@@ -2,7 +2,13 @@ package racingcar;
 
 public class CountParser {
 
-    public int getCount(String input) {
+    private final String input;
+
+    public CountParser(String input) {
+        this.input = input;
+    }
+
+    public int getCount() {
         int count;
 
         try {

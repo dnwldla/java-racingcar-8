@@ -3,6 +3,7 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class Car {
+
     private final String name;
     private int count;
 
@@ -10,10 +11,10 @@ public class Car {
         this.name = name;
     }
 
-    public void move(){
-        int randomNum= Randoms.pickNumberInRange(1,9);
+    public void move() {
+        int randomNum = Randoms.pickNumberInRange(1, 9);
 
-        if (randomNum>=4){
+        if (randomNum >= 4) {
             this.count++;
         }
     }
