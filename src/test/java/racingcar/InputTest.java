@@ -35,6 +35,16 @@ public class InputTest {
 
     }
 
+    @Test
+    void inputWithNegativeNumber() {
+        CountParser parser = new CountParser("-1");
+
+        assertThatThrownBy(() -> parser.getCount())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("0 이하의 숫자를 입력할 수 없습니다");
+
+    }
+
 
     @Test
     void inputWithValidNumber() {

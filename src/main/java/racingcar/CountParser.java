@@ -17,6 +17,10 @@ public class CountParser {
             throw new IllegalArgumentException("숫자를 입력해야 합니다");
         }
 
+        if (count <= 0) {
+            throw new IllegalArgumentException("0 이하의 숫자를 입력할 수 없습니다");
+        }
+
         return count;
 
     }
