@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import racingcar.generator.RandomGenerator;
 
@@ -18,7 +19,7 @@ public class CarFactory {
         String[] names = validateInput(input);
 
         for (String name : names) {
-            cars.add(new Car(name,new RandomGenerator()));
+            cars.add(new Car(name, new RandomGenerator()));
         }
 
         return cars;
@@ -26,11 +27,17 @@ public class CarFactory {
 
     private String[] validateInput(String input) {
         String[] names = input.split(",");
+        HashSet<String> nameSet = new HashSet<>();
 
         for (String name : names) {
             if (name.length() >= 6) {
                 throw new IllegalArgumentException("자동차 이름은 최대 다섯글자입니다");
             }
+            nameSet.add(name);
+        }
+
+        if (nameSet.size() != names.length) {
+            throw new IllegalArgumentException("자동차 이름은 중복일 수 없습니다");
         }
 
         return names;

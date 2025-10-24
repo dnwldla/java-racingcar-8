@@ -8,12 +8,22 @@ import org.junit.jupiter.api.Test;
 public class InputTest {
 
     @Test
-    void inputWithInvalidInput() {
+    void inputWithInvalidCarLength() {
         CarFactory carFactory = new CarFactory("aaaaaa,bb,c");
 
         assertThatThrownBy(() -> carFactory.getCars())
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("자동차 이름은 최대 다섯글자입니다");
+    }
+
+    @Test
+    void inputWithDuplicatedName(){
+        CarFactory carFactory = new CarFactory("aa,aa,c");
+
+        assertThatThrownBy(() -> carFactory.getCars())
+            .isInstanceOf(IllegalArgumentException.class)
+            .hasMessage("자동차 이름은 중복일 수 없습니다");
+
     }
 
     @Test
