@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Game {
 
@@ -29,6 +30,14 @@ public class Game {
 
     }
 
+    public String getWinner() {
+        Car winner = cars.stream().max(Car::compareTo).get();
+
+        return cars.stream().filter(winner::isSameCount)
+            .map(Car::getName)
+            .collect(Collectors.joining(", "));
+
+    }
 
 
 }
