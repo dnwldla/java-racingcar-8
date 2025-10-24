@@ -14,12 +14,14 @@ public class Car {
         this.numberGenerator = numberGenerator;
     }
 
-    public void move() {
+    public String move() {
         int number = numberGenerator.getNumber();
 
         if (number >= 4) {
             this.count++;
         }
+
+        return getState();
     }
 
     public String getState() {
