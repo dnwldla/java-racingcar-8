@@ -14,7 +14,7 @@ public class RacingTest {
 
         car.move();
 
-        assertThat(car.getState()).isEqualTo("ab" + " : ");
+        assertThat(car.toResultString()).isEqualTo("ab" + " : ");
     }
 
     @Test
@@ -23,7 +23,7 @@ public class RacingTest {
 
         car.move();
 
-        assertThat(car.getState()).isEqualTo("ab" + " : " + "-");
+        assertThat(car.toResultString()).isEqualTo("ab" + " : " + "-");
     }
 
 }
