@@ -1,19 +1,20 @@
-package racingcar;
+package racingcar.parser;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import racingcar.generator.RandomGenerator;
+import racingcar.domain.Car;
+import racingcar.domain.generator.RandomGenerator;
 
-public class CarFactory {
+public class CarParser {
 
     private final String input;
 
-    public CarFactory(String input) {
+    public CarParser(String input) {
         this.input = input;
     }
 
-    public List<Car> getCars() {
+    public List<Car> createCars() {
         List<Car> cars = new ArrayList<>();
 
         String[] names = validateInput(input);

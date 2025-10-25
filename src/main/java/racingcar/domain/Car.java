@@ -1,6 +1,6 @@
-package racingcar;
+package racingcar.domain;
 
-import racingcar.generator.NumberGenerator;
+import racingcar.domain.generator.NumberGenerator;
 
 public class Car implements Comparable<Car> {
 

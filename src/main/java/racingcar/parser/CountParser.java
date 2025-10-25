@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.parser;
 
 public class CountParser {
 
@@ -8,7 +8,7 @@ public class CountParser {
         this.input = input;
     }
 
-    public int getCount() {
+    public int createCount() {
         int count;
 
         try {

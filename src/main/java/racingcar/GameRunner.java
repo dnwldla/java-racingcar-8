@@ -1,5 +1,8 @@
 package racingcar;
 
+import racingcar.domain.Game;
+import racingcar.parser.CarParser;
+import racingcar.parser.CountParser;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -28,10 +31,10 @@ public class GameRunner {
     }
 
     private Game prepareGame(String carNames, String count) {
-        CarFactory carFactory = new CarFactory(carNames);
+        CarParser carParser = new CarParser(carNames);
         CountParser countParser = new CountParser(count);
 
-        return new Game(countParser.getCount(), carFactory.getCars());
+        return new Game(countParser.createCount(), carParser.createCars());
 
 
     }

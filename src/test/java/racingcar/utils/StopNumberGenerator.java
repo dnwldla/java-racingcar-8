@@ -1,6 +1,6 @@
 package racingcar.utils;
 
-import racingcar.generator.NumberGenerator;
+import racingcar.domain.generator.NumberGenerator;
 
 public class StopNumberGenerator implements NumberGenerator {
 
