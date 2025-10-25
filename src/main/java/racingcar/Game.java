@@ -19,7 +19,8 @@ public class Game {
         while (count > 0) {
             StringBuilder sb = new StringBuilder();
             for (Car car : cars) {
-                sb.append(car.move()).append("\n");
+                car.move();
+                sb.append(car.toResultString()).append("\n");
             }
             result.append(sb).append("\n");
             count--;

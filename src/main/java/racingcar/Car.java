@@ -18,14 +18,13 @@ public class Car implements Comparable<Car> {
         return this.count - other.count;
     }
 
-    public String move() {
+    public void move() {
         int number = numberGenerator.getNumber();
 
         if (number >= 4) {
             this.count++;
         }
 
-        return getState();
     }
 
     public boolean isSameCount(Car other) {
@@ -36,7 +35,7 @@ public class Car implements Comparable<Car> {
         return this.name;
     }
 
-    public String getState() {
+    public String toResultString() {
         return this.name + " : " + "-".repeat(this.count);
     }
 
