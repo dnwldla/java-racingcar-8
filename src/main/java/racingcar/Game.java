@@ -13,22 +13,28 @@ public class Game {
         this.cars = cars;
     }
 
-    public String getProgress() {
-        StringBuilder result = new StringBuilder();
+    public String start() {
+        StringBuilder progress = new StringBuilder();
 
         while (count > 0) {
-            StringBuilder sb = new StringBuilder();
-            for (Car car : cars) {
-                car.move();
-                sb.append(car.toResultString()).append("\n");
-            }
-            result.append(sb).append("\n");
+            progress.append(playRound()).append("\n");
             count--;
         }
 
-        return result.toString();
+        return progress.toString();
 
 
+    }
+
+    public String playRound() {
+        StringBuilder sb = new StringBuilder();
+
+        for (Car car : cars) {
+            car.move();
+            sb.append(car.toResultString());
+        }
+
+        return sb.toString();
     }
 
     public String getWinner() {

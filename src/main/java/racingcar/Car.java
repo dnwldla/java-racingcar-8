@@ -36,7 +36,7 @@ public class Car implements Comparable<Car> {
     }
 
     public String toResultString() {
-        return this.name + " : " + "-".repeat(this.count);
+        return this.name + " : " + "-".repeat(this.count)+ "\n";
     }
 
 
