@@ -37,7 +37,7 @@ public class Game {
         return sb.toString();
     }
 
-    public String getWinner() {
+    public String findWinners() {
         Car winner = cars.stream().max(Car::compareTo).get();
 
         return cars.stream().filter(winner::isSameCount)
