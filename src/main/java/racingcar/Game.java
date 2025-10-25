@@ -13,7 +13,7 @@ public class Game {
         this.cars = cars;
     }
 
-    public String start() {
+    public String playAllRounds() {
         StringBuilder progress = new StringBuilder();
 
         while (count > 0) {
