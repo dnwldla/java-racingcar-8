@@ -3,11 +3,11 @@ package racingcar.view;
 public class OutputView {
 
     public void printResultPrompt(){
-        System.out.println("실행 결과");
+        System.out.println("\n실행 결과");
     }
 
     public void printProgress(String progress){
-        System.out.println(progress);
+        System.out.printf(progress);
     }
 
     public void printWinner(String winners){

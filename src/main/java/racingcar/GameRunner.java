@@ -23,6 +23,8 @@ public class GameRunner {
         Game game = prepareGame(carNames, count);
 
         String progress = game.playAllRounds();
+
+        outputView.printResultPrompt();
         outputView.printProgress(progress);
 
         String winners = game.findWinners();
